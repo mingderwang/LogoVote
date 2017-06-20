@@ -5,9 +5,9 @@ import './PageLayout.scss'
 
 export const PageLayout = ({ children }) => (
   <div className='container text-center'>
-    <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
+    <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Taipei Ethereum Meetup</IndexLink>
     {' · '}
-    <Link to='/greeting' activeClassName='page-layout__nav-item--active'>Elasitcsearch Query</Link>
+    <Link to='/greeting' activeClassName='page-layout__nav-item--active'>LogoVote</Link>
     <div className='page-layout__viewport'>
       {children}
     </div>

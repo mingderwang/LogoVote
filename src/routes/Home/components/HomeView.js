@@ -4,7 +4,8 @@ import './HomeView.scss'
 
 export const HomeView = () => (
   <div>
-    <h4>歡迎使用 biMap 效能評估與日誌分析工具</h4>
+    <h1>Welcome to Taipei Ethereum Meetup</h1>
+    <h4>We are going to use a smart contract for people to vote our new Logo.</h4>
   </div>
 )
 

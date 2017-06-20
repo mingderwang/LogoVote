@@ -29,6 +29,9 @@ const SearchResults = React.createClass({
 
 var createReactClass = require('create-react-class')
 var Greeting = createReactClass({
+  handleClick (event) {
+        console.log('clicked');
+  },
   handleChange (event) {
     const searchBlock = event.target.value
     web3.eth.getBlock(searchBlock, function(error, result){
@@ -46,8 +49,25 @@ var Greeting = createReactClass({
              } else {
                  console.log('No web3? You should consider trying MetaMask!')
                  // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-                 web3 = new Web3(new Web3.providers.HttpProvider("http://pub-node1.etherscan.io:8545"));
+//                 web3 = new Web3(new Web3.providers.HttpProvider("http://pub-node1.etherscan.io:8545")); //main net
+                 // Ropsten Testnet 
+                 web3 = new Web3(new Web3.providers.HttpProvider("http://163.172.171.98:8545")); //Ropsten test net
          }
+         web3.version.getNetwork((err, netId) => {
+  switch (netId) {
+    case "1":
+      console.log('This is mainnet')
+      break
+    case "2":
+      console.log('This is the deprecated Morden test network.')
+      break
+    case "3":
+      console.log('This is the ropsten test network.')
+      break
+    default:
+      console.log('This is an unknown network.')
+  }
+})
   },
   getInitialState () {
     return {
@@ -65,7 +85,7 @@ var Greeting = createReactClass({
   render: function () {
     return (
       <div>
-      <h4>example: /System/Library/PrivateFramework</h4>
+        <button onClick={this.handleClick}>Click me</button>
         <input type='text' onChange={this.handleChange} />
         <SearchResults results={this.state.results} />
       </div>
