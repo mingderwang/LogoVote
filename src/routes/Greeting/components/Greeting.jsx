@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import elasticsearch from 'elasticsearch'
+import Web3 from 'web3'
 
-let client = new elasticsearch.Client({
-  host: 'localhost:9200'
-})
+let web3
 
 const SearchResults = React.createClass({
   propTypes: {
@@ -31,22 +30,24 @@ const SearchResults = React.createClass({
 var createReactClass = require('create-react-class')
 var Greeting = createReactClass({
   handleChange (event) {
-    const searchQuery = event.target.value
-    client.search({
-      body:  {
-      "query": {
-    "match_phrase_prefix": {
-      "proc.cmdline": {
-        "query": searchQuery
-      }
-    }
-  }
-    }
-    }).then(function (body) {
-      this.setState({ results: body.hits.hits })
-    }.bind(this), function (error) {
-      console.trace(error.message)
-    })
+    const searchBlock = event.target.value
+    web3.eth.getBlock(searchBlock, function(error, result){
+    if(!error)
+        console.log(result);
+    else
+        console.error(error);
+})
+  },
+  componentDidMount () {
+// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+            if (typeof web3 !== 'undefined') {
+                 // Use Mist/MetaMask's provider
+                 web3 = new Web3(web3.currentProvider);
+             } else {
+                 console.log('No web3? You should consider trying MetaMask!')
+                 // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+                 web3 = new Web3(new Web3.providers.HttpProvider("http://163.172.171.98:8545"));
+         }
   },
   getInitialState () {
     return {
