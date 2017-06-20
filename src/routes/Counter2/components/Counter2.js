@@ -38,16 +38,16 @@ class Counter2 extends React.Component {
           <li key={item.id}>
             {item.label}
           </li>
-                ))}
+          ))}
       </ul>
     )
   }
 }
 
 Counter2.propTypes = {
-  counter: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-  doubleAsync: PropTypes.func.isRequired,
+  itemsr: PropTypes.object.isRequired,
+  isLoadingt: PropTypes.func.isRequired,
+  hasErroredc: PropTypes.func.isRequired,
 }
 
 export default Counter2
