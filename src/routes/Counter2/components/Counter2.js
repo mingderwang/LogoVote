@@ -1,18 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Counter2 = ({ counter, increment, doubleAsync }) => (
-  <div style={{ margin: '0 auto' }} >
-    <h2>Counter2: {counter}</h2>
-    <button className='btn btn-primary' onClick={increment}>
-      Increment
-    </button>
-    {' '}
-    <button className='btn btn-secondary' onClick={doubleAsync}>
-      Double (Async)
-    </button>
-  </div>
-)
+const Counter2 = ({ counter, increment, doubleAsync }) => {
+  if (counter.hasErrored) {
+    return <p>Sorry! There was an error loading the items</p>
+  }
+  if (counter.isLoading) {
+    return <p>Loading…</p>
+  }
+  return (
+    <ul>
+      {counter.items.map((item) => (
+        <li key={item.id}>
+          {item.label}
+        </li>
+                ))}
+    </ul>
+  )
+}
+
 Counter2.propTypes = {
   counter: PropTypes.number.isRequired,
   increment: PropTypes.func.isRequired,
