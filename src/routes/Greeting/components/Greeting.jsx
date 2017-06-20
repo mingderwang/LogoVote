@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import elasticsearch from 'elasticsearch'
 import Web3 from 'web3'
 
-let web3
-
 const SearchResults = React.createClass({
   propTypes: {
     results: React.PropTypes.array
@@ -34,7 +32,7 @@ var Greeting = createReactClass({
   },
   handleChange (event) {
     const searchBlock = event.target.value
-    web3.eth.getBlock(searchBlock, function(error, result){
+    window.web3.eth.getBlock(searchBlock, function(error, result){
     if(!error)
         console.log(result);
     else
