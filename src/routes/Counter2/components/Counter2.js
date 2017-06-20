@@ -2,6 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 class Counter2 extends React.Component {
+  static propTypes = {
+    terms: PropTypes.object.isRequired,
+    isLoadingt: PropTypes.func.isRequired,
+    hasErroredc: PropTypes.func.isRequired
+  }
   constructor () {
     super()
     this.state = {
@@ -42,12 +47,6 @@ class Counter2 extends React.Component {
       </ul>
     )
   }
-}
-
-Counter2.propTypes = {
-  itemsr: PropTypes.object.isRequired,
-  isLoadingt: PropTypes.func.isRequired,
-  hasErroredc: PropTypes.func.isRequired,
 }
 
 export default Counter2
