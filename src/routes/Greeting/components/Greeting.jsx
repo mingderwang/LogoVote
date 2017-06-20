@@ -33,7 +33,16 @@ var Greeting = createReactClass({
   handleChange (event) {
     const searchQuery = event.target.value
     client.search({
-      q: searchQuery
+      body: {
+        "query": {
+    "match": {
+      "proc.cpu.start_time": {
+        "query": "Jun08",
+        "type": "phrase"
+      }
+    }
+  }
+      }
     }).then(function (body) {
       this.setState({ results: body.hits.hits })
     }.bind(this), function (error) {

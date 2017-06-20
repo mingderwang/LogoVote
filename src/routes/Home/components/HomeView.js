@@ -4,8 +4,7 @@ import './HomeView.scss'
 
 export const HomeView = () => (
   <div>
-    <h4>Welcome!</h4>
-    <img alt='This is a duck, because Redux!' className='duck' src={DuckImage} />
+    <h4>歡迎使用 biMap 效能評估與日誌分析工具</h4>
   </div>
 )
 
