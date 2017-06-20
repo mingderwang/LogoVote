@@ -33,16 +33,15 @@ var Greeting = createReactClass({
   handleChange (event) {
     const searchQuery = event.target.value
     client.search({
-      body: {
-        "query": {
-    "match": {
-      "proc.cpu.start_time": {
-        "query": "Jun08",
-        "type": "phrase"
+      body:  {
+      "query": {
+    "match_phrase_prefix": {
+      "proc.cmdline": {
+        "query": searchQuery
       }
     }
   }
-      }
+    }
     }).then(function (body) {
       this.setState({ results: body.hits.hits })
     }.bind(this), function (error) {
@@ -65,6 +64,7 @@ var Greeting = createReactClass({
   render: function () {
     return (
       <div>
+      <h4>example: /System/Library/PrivateFramework</h4>
         <input type='text' onChange={this.handleChange} />
         <SearchResults results={this.state.results} />
       </div>
