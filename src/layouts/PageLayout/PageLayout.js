@@ -7,11 +7,7 @@ export const PageLayout = ({ children }) => (
   <div className='container text-center'>
     <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Home</IndexLink>
     {' · '}
-    <Link to='/counter' activeClassName='page-layout__nav-item--active'>Counter</Link>
-    {' · '}
-    <Link to='/counter2' activeClassName='page-layout__nav-item--active'>Counter2</Link>
-    {' · '}
-    <Link to='/greeting' activeClassName='page-layout__nav-item--active'>Greeting</Link>
+    <Link to='/greeting' activeClassName='page-layout__nav-item--active'>Elasitcsearch Query</Link>
     <div className='page-layout__viewport'>
       {children}
     </div>
