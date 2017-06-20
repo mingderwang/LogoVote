@@ -1,7 +1,7 @@
 import { injectReducer } from '../../store/reducers'
 
 export default (store) => ({
-  path : 'counter2',
+  path : 'greeting',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point
@@ -9,17 +9,16 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Counter2 = require('./containers/CounterContainer2').default
-      const reducer = require('./modules/counter2').default
-      console.log(reducer)
+      const Greeting = require('./containers/GreetingContainer').default
+      const reducer = require('./modules/greeting').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      injectReducer(store, { key: 'counter2', reducer })
+      injectReducer(store, { key: 'greeting', reducer })
 
       /*  Return getComponent   */
-      cb(null, Counter2)
+      cb(null, Greeting)
 
     /* Webpack named bundle   */
-    }, 'counter2')
+    }, 'greeting')
   }
 })
