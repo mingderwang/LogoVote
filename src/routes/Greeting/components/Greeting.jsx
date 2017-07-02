@@ -21,7 +21,7 @@ var MyContract = window.web3.eth.contract(abi);
 var myContractInstance = MyContract.at(address);
 
 // call constant function
-myContractInstance.balanceOf(web3.eth.accounts[0],function(error, result) { console.log(result)}) 
+myContractInstance.balanceOf(web3.eth.accounts[0],function(error, result) { console.log(result)})
 }
 
 var createReactClass = require('create-react-class')
@@ -70,12 +70,21 @@ var myContractInstance = MyContract.at(address);
 myContractInstance.balanceOf(web3.eth.accounts[0],function(error, result) {
 
 this.setState({token: result.c[0]});
-   }.bind(this)) 
+   }.bind(this))
 this.setState({message: web3.eth.accounts[0]});
+var lastBlock = web3.eth.getBlockNumber(function(error, result) {
+ if(!error) {
+        console.log(result)
+this.setState({currentBlock: result})
+}
+    else
+        console.error(error);
+}.bind(this))
 })
   },
+
   getInitialState: function() {
-    return {message: 'n/a', token: '0', net: 'n/a'
+    return {message: 'n/a', token: '0', net: 'n/a', currentBlock: '0'
   };
   },
   propTypes: {
@@ -86,12 +95,14 @@ this.setState({message: web3.eth.accounts[0]});
     return {
       message:'n/a',
       token: '0',
+      currentBlock: '0',
       net: 'n/a'
     }
   },
   render: function () {
     var message = this.state.message
     var token = this.state.token
+    var currentBlock = this.state.currentBlock
     var net = this.state.net
     return (
       <div>
@@ -103,6 +114,9 @@ this.setState({message: web3.eth.accounts[0]});
         <p></p>
         <h2>You have Taipei Ethereum LogoVote Token: </h2>
         <h4>{token}</h4>
+        <p/>
+        <h2> currentBlock: </h2>
+        <h4>{currentBlock}</h4>
       </div>
     )
   }
