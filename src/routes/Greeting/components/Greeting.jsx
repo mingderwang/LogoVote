@@ -29,15 +29,29 @@ myContractInstance.balanceOf(web3.eth.accounts[0],function(error, result) { cons
 
 var createReactClass = require('create-react-class')
 var Greeting22 = createReactClass({
-  handleClick (event) {
-    var message = this.state.message
-    window.web3.eth.getBlock(message, function(error, result){
-    if(!error) {
-        this.setState({message: JSON.stringify(result)});
-    }
-    else
-        this.setState({message: 'error'});
-    }.bind(this))
+  handleClick1 (event) {
+    var VoteContract = window.web3.eth.contract(abiVote);
+var myVoteContractInstance = VoteContract.at(VoteAddress)
+
+myVoteContractInstance.transfer(Logo1,1, function(error, result) {
+  if(!error) {
+  console.log(result)
+} else {
+  console.log(error)
+}
+})
+  },
+  handleClick2 (event) {
+    var VoteContract = window.web3.eth.contract(abiVote);
+var myVoteContractInstance = VoteContract.at(VoteAddress)
+
+myVoteContractInstance.transfer(Logo2,1, function(error, result) {
+  if(!error) {
+  console.log(result)
+} else {
+  console.log(error)
+}
+})
   },
   handleChange (event) {
     this.setState({message: event.target.value});
@@ -153,6 +167,8 @@ myVoteContractInstance.balanceOf(Logo2, function(error, result) {
               <img src="https://static.pexels.com/photos/54632/cat-animal-eyes-grey-54632.jpeg" alt="ET" style={{width: 400}} />
         <h2> ET got: </h2>
         <h4>{logo2}</h4>
+        <button onClick={this.handleClick1}>我要投 阿花 1 票</button>
+        <button onClick={this.handleClick2}>我要投 ET 1 票</button>
       </div>
     )
   }
