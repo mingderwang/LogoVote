@@ -178,20 +178,23 @@ myVoteContractInstance.balanceOf(Logo2, function(error, result) {
         <p></p>
         <h2>You have Taipei Ethereum LogoVote Token: </h2>
         <h4>{token}</h4>
+        <button onClick={this.handleClickFaucet}>我要索取一張免費選票</button>
         <h2> currentBlock: </h2>
         <h4>{currentBlock}</h4>
         <h2> endBlock: </h2>
         <h4>1295975</h4>
-              <img src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" alt="ET" style={{width: 400}} />
+        <button onClick={this.handleClick1}>我要投 阿花 1 票</button>
+              <img src="https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg" alt="hua" style={{width: 400}} />
+<img src="http://i.imgur.com/Vhvm6jT.png" alt="huaqrcode" style={{width: 300}} />
+              0xd085758bfd6e5e7560d7d9e3dcc50c99f38d74e8
         <h2> 阿花 got: </h2>
         <h4>{logo1}</h4>
+        <button onClick={this.handleClick2}>我要投 ET 1 票</button>
               <img src="https://static.pexels.com/photos/54632/cat-animal-eyes-grey-54632.jpeg" alt="ET" style={{width: 400}} />
+<img src="http://i.imgur.com/gVj6xCY.png" alt="ETqrcode" style={{width: 300}} />
+             0xa7199b1011aea537447c43d0f1d8d91ec3fbf84c
         <h2> ET got: </h2>
         <h4>{logo2}</h4>
-        <button onClick={this.handleClick1}>我要投 阿花 1 票</button>
-        <button onClick={this.handleClick2}>我要投 ET 1 票</button>
-
-        <button onClick={this.handleClickFaucet}>我要索取一張免費選票</button>
       </div>
     )
   }
