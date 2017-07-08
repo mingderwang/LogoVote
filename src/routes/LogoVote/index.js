@@ -10,7 +10,7 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const logoVote = require('./containers/LogoVoteContainer').default
-      const reducer = require('./modules/Logovote').default
+      const reducer = require('./modules/LogoVote').default
 
       /*  Add the reducer to the store on key 'counter'  */
       injectReducer(store, { key: 'logovote', reducer })
