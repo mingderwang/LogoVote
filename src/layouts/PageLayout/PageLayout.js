@@ -8,6 +8,8 @@ export const PageLayout = ({ children }) => (
     <IndexLink to='/' activeClassName='page-layout__nav-item--active'>Taipei Ethereum Meetup</IndexLink>
     {' · '}
     <Link to='/greeting' activeClassName='page-layout__nav-item--active'>貓選美</Link>
+    {' · '}
+    <Link to='/logoVote' activeClassName='page-layout__nav-item--active'>LogoVote (Logo投票)</Link>
     <div className='page-layout__viewport'>
       {children}
     </div>
