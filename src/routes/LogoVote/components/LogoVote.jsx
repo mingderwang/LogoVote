@@ -61,7 +61,7 @@ myVoteContractInstance.transfer(Logo0,1, function(error, result) {
 var VoteContract = window.web3.eth.contract(abiVote);
 var myVoteContractInstance = VoteContract.at(VoteAddress)
 
-myVoteContractInstance.transfer(logo1,1, function(error, result) {
+myVoteContractInstance.transfer(Logo1,1, function(error, result) {
   if(!error) {
   console.log(result)
 } else {
@@ -73,7 +73,7 @@ myVoteContractInstance.transfer(logo1,1, function(error, result) {
 var VoteContract = window.web3.eth.contract(abiVote);
 var myVoteContractInstance = VoteContract.at(VoteAddress)
 
-myVoteContractInstance.transfer(logo2,1, function(error, result) {
+myVoteContractInstance.transfer(Logo2,1, function(error, result) {
   if(!error) {
   console.log(result)
 } else {
@@ -85,7 +85,7 @@ myVoteContractInstance.transfer(logo2,1, function(error, result) {
 var VoteContract = window.web3.eth.contract(abiVote);
 var myVoteContractInstance = VoteContract.at(VoteAddress)
 
-myVoteContractInstance.transfer(logo3,1, function(error, result) {
+myVoteContractInstance.transfer(Logo3,1, function(error, result) {
   if(!error) {
   console.log(result)
 } else {
@@ -97,7 +97,7 @@ myVoteContractInstance.transfer(logo3,1, function(error, result) {
 var VoteContract = window.web3.eth.contract(abiVote);
 var myVoteContractInstance = VoteContract.at(VoteAddress)
 
-myVoteContractInstance.transfer(logo4,1, function(error, result) {
+myVoteContractInstance.transfer(Logo4,1, function(error, result) {
   if(!error) {
   console.log(result)
 } else {
@@ -109,7 +109,7 @@ myVoteContractInstance.transfer(logo4,1, function(error, result) {
 var VoteContract = window.web3.eth.contract(abiVote);
 var myVoteContractInstance = VoteContract.at(VoteAddress)
 
-myVoteContractInstance.transfer(logo5,1, function(error, result) {
+myVoteContractInstance.transfer(Logo5,1, function(error, result) {
   if(!error) {
   console.log(result)
 } else {
@@ -291,7 +291,7 @@ myVoteContractInstance.balanceOf(Logo5, function(error, result) {
         <h2> currentBlock: </h2>
         <h4>{currentBlock}</h4>
         <h2> endBlock: </h2>
-        <h4>4039902 (大約為7/13晚上)</h4>
+        <h4>4039902 (大約為 7/13 ~ 7/18 晚上)</h4>
         <table style={{width: '100%'}}>
         <tr>
         <button onClick={this.handleClick1}>我要投 @wendy30398 1 票</button>
@@ -301,12 +301,12 @@ myVoteContractInstance.balanceOf(Logo5, function(error, result) {
         <h2> @wendy30398 got: {logo0} TLV</h2>
         </tr>
         <tr>
-        <button onClick={this.handleClick2}>我要投 gundam.fhcrc@gmail.com 1 票</button>
+        <button onClick={this.handleClick2}>我要投 gundam.fhcrc 1 票</button>
               <img src="https://user-images.githubusercontent.com/6625091/27011067-6ff69284-4ee6-11e7-96d2-167deaa88c94.jpg" alt="ETqrcode" style={{width: 300}} />
              {Logo1}
              <img src='http://qrickit.com/api/qr.php?d=0x17DA2B4227bdfbF6c4dc39afea1E4F6e0af575B7&addtext=&txtcolor=442EFF&fgdcolor=76103C&bgdcolor=C0F912&logotext=QRickit&qrsize=150&t=p&e=m'/>
 
-        <h2> gundam.fhcrc@gmail.com got: {logo1} TLV </h2>
+        <h2> gundam.fhcrc got: {logo1} TLV </h2>
         </tr>
         <tr>
         <button onClick={this.handleClick3}>我要投 jksnkuo 1 票</button>
