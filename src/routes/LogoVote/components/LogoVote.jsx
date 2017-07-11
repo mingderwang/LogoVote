@@ -286,6 +286,10 @@ myVoteContractInstance.balanceOf(Logo5, function(error, result) {
         <h4>{message}</h4>
         <iframe src="https://www.powr.io/plugins/countdown-timer/view?unique_label=85f91fd1_1499096974&external_type=iframe" width="100%" height="200" frameborder="0"></iframe>
         <p></p>
+<h2>可以直接買 TLV,  0.001 ether = 1 TLV</h2>
+<h2>請直接寄 ether 給</h2>
+<h1>主合約位址</h1>
+<h2>0x3Ab1d534Bb477f516817eFaAf0B569f419b8e292</h2>
         <h2>You have Taipei Ethereum LogoVote (TLV) Token: {token}</h2>
         <button onClick={this.handleClickFaucet}>我要索取一張免費選票</button>
         <h2> currentBlock: </h2>
