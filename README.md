@@ -1,4 +1,5 @@
 # v2.0.0-final
+Taipei Ethereum Meetup · 貓選美(Ropsten TestNet) · LogoVote (Logo投票 MainNet)
 # modify for LogoVote testnet dapp, for Ethereum Taiwan Logo Vote token ICO
 # React Redux Starter Kit
 
