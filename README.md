@@ -1,3 +1,4 @@
+# modify for LogoVote testnet dapp, for Ethereum Taiwan Logo Vote token ICO
 # React Redux Starter Kit
 
 [![Build Status](https://travis-ci.org/davezuko/react-redux-starter-kit.svg?branch=master)](https://travis-ci.org/davezuko/react-redux-starter-kit?branch=master)
