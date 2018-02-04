@@ -1,3 +1,4 @@
+# v2.0.0-final
 # modify for LogoVote testnet dapp, for Ethereum Taiwan Logo Vote token ICO
 # React Redux Starter Kit
 
